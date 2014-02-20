@@ -12,7 +12,7 @@ Follow the instructions line-by-line.
 [NO OUTPUT]
 ----------
 ==========
-2. Find out if mtec1002-lab-02 already exists (from the previous lab).  If it doesn't, go back to the previous lab and find the steps regarding downloading the lab materials.
+2. Find out if mtec1002-lab-03 already exists (from the previous lab).  If it doesn't, go back to the previous lab and find the steps regarding downloading the lab materials.
 
 (See steps 1-8 in http://foureyes.github.io/mtec1002-spring2014/labs/03/lab-03-part-02-working-with-files.txt)
 [NO OUTPUT]
@@ -37,7 +37,7 @@ $ ls
 Copy and paste the output below.
 ----------
 
-
+foo.txt
 
 ==========
 7. Create another new file using touch.
@@ -45,7 +45,7 @@ Copy and paste the output below.
 $ touch bar.txt
 ----------
 
-
+bar.txt foo.txt
 
 ==========
 8. List the files in this directory using the flag that gives the most details.
@@ -53,7 +53,10 @@ $ touch bar.txt
 Copy and paste the output below.
 ----------
 
-
+drwxr-xr-x  4 student  staff  136 Feb 19 19:24 .
+-rw-r--r--  1 student  staff    0 Feb 19 19:24 bar.txt
+-rw-r--r--  1 student  staff    0 Feb 19 19:24 foo.txt
+drwxr-xr-x  7 student  staff  238 Feb 19 19:24 ..
 
 ==========
 9. Create a copy of bar.txt called baz.txt and then list the files again.
@@ -62,20 +65,27 @@ Copy and paste the output below.
 Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
 ----------
 
-
+bar.txt	baz.txt	foo.txt
 
 ==========
 10. Delete the file called bar.txt and then list the files again.
 
 Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
 ----------
+
+rm bar.txt
+
+baz.txt	foo.txt
+
 ==========
 11. Move the file called foo.txt to qux.txt and then list the files again.
 
 
 Write the command that you used to move the file.  Copy and paste the output of your file listing below.
 ----------
+mv foot.txt aux.txt
 
+baz.txt	qux.txt
 
 
 ==========
@@ -91,14 +101,14 @@ Write the command that you used to move the file.  Copy and paste the output of 
 Write out the command that you used and what happened.
 ----------
 
-
+rmdir: my_files: Directory not empty
 
 ==========
 14. Try removing the directory called my_files using rm.
 
 Write out the command that you used and what happened.
 ----------
-
+rm: my_files: is a directory
 
 
 ==========
@@ -120,7 +130,7 @@ Use the command called cat on the file to show its contents.
 
 Describe what happened below.
 ----------
-
+It is a ebook. The Prince
 
 
 ==========
@@ -132,7 +142,7 @@ Use the command, head, on the file to show the contents of the beginning of the 
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
-
+Title: The Prince
 
 
 ==========
@@ -144,7 +154,10 @@ Use tail on the file to show the contents of the end of the file.
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
-
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
 
 
 ==========
@@ -157,22 +170,37 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
 
-
+less pg1232.txt
+spacebar: page down
+q: quit
 
 ==========
 20. Describe what situations you would use the following commands for viewing files: less, more, cat, tail, head
 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
-
-
+head: title.
+tail: last line of the file
+cat: display all the contents on a file
+less: show the contents of a file with pagination
+more: show the contents of a file with pagination
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
-
+wc pg1232.txt
 
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
+5063
+
+==========
+OPTIONAL
+
+23.  Make sure you're in the books/other folder.  Copy all of the txt files from that folder to your home directory using wildcard matching.
+
+Write the command that you used below.
+----------
+cp *.txt ~/
